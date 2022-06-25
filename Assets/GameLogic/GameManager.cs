@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     {
         LuaState ls = new LuaState();
         ls.Start();
+        LuaBinder.Bind(ls);
         ls.Require("Game");
         ls.Call("InitGame", false);
         ls.Dispose();
